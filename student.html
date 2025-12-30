@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Info</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="nav-left">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="school.html">About Us</a></li>
+            <li><a href="student.html">Students Info </a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+     <div class="nav-right">
+        <div class="profile">
+            Welcome, <span id="username"></span>
+            <button onclick="logout()" style="margin-left:10px; padding:5px 10px; cursor:pointer;">
+                Logout
+            </button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search for...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<div class="dashboard-header">
+    <h1>Students Information</h1>
+</div>
+
+<main class="container">
+   <div class="cards">
+    <a href="#pin" class="card-link">
+        <div class="card blue">
+            <h2>SH University Student Enrollment (5 Years)</h2>
+        </div>
+    </a>
+
+    <a href="#pin" class="card-link">
+        <div class="card green">
+            <h2>Students Based on Year of Study</h2>
+        </div>
+    </a>
+
+    <a href="#donut" class="card-link">
+        <div class="card cyan">
+            <h2>Students Origin (Cities & International)</h2>
+        </div>
+    </a>
+
+    <a href="#donut" class="card-link">
+        <div class="card yellow">
+            <h2>Students Based On Ethnic</h2>
+        </div>
+    </a>
+   </div>
+</main>
+
+<main class="container">
+<section id="students">
+    <div class="box-hover1">
+        <div class="text-content">
+            <h1>Brief Explaination About The Students</h1><br>
+            <p>Since its establishment, SH University has welcomed a total of 30,568 students. These students hail from a diverse range of countries, representing various ethnic backgrounds, cultures, and traditions. The university prides itself on fostering a multicultural and inclusive learning environment, where students have the opportunity to engage in rich academic, social, and cultural experiences.</p><br>
+
+             <p>Over the years, SH University has grown into a vibrant community that encourages collaboration, innovation, and global perspectives. Students participate in various programs, workshops, and activities that not only enhance their academic knowledge but also promote leadership, creativity, and personal development.</p><br>
+             
+             <p>The diversity of the student body allows for cross-cultural interactions, making it a dynamic space for learning and personal growth. By welcoming students from different walks of life, SH University continues to build a strong foundation for future leaders who are prepared to excel in a globalized world.</p><br>
+
+            <p>Below are chart to show the students brief information.</p>
+        </div>
+    </div>
+</section>
+</main>
+
+
+
+<main class="container"> 
+
+    <div class="dashboard-header">
+    <h3>Students Graph Trends</h3>
+</div>
+
+    <section id="pin">
+        <div class="chart-container">
+            <div class="chart-card2">
+                <h3>SH University Student Enrollment (5 Years)</h3>
+                <canvas id="enrollmentChart"></canvas>
+            </div>
+
+            <div class="chart-card2">
+                <h3>Students Faculty Choice Trends</h3>
+                <canvas id="facultyTrendChart"></canvas>
+            </div>
+
+            <div class="chart-card2">
+                <h3>Students Based on Years of Study</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="students">
+    <div class="box-hover1">
+        <div class="text-content">
+            <h1>Brief Explaination About The Graphs</h1><br>
+            <p>SH University’s student enrollment has shown a steady rise over five years, starting from around 2,000 in 2021 and reaching 4,500 by 2025. Despite a slight dip in 2024, the overall trend reflects consistent growth</p><br>
+
+             <p>In terms of faculty preferences, Business and Engineering lead with the highest student interest, followed by IT. Medicine, Dentistry, and Education have fewer students, while one data label appears undefined, possibly due to missing categorization.</p><br>
+             
+             <p>Student distribution by academic year shows Tahun 1 with the highest count at 420 students, followed by Tahun 4. Tahun 2 and Tahun 3 have fewer students, indicating possible drop-offs or smaller cohorts in those years.</p>
+
+        </div>
+    </div>
+</section>
+</main>
+
+
+
+<main class="container"> 
+
+    <div class="dashboard-header">
+    <h3>Students Graph Trends</h3>
+</div>
+
+    <section id="donut">
+        <div class="chart-container">
+            <div class="chart-card2">
+                <h3>Students Based on Ethnic</h3>
+                <canvas id="donutChart"></canvas>
+            </div>
+
+            <div class="chart-card2">
+                <h3>Students State of Origin</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+            <div class="chart-card2">
+                <h3>Student Graduation Percentage (Recent Year)</h3>
+                <canvas id="graduationChart"></canvas>
+            </div>
+    </section>
+
+    <section id="students">
+    <div class="box-hover1">
+        <div class="text-content">
+            <h1>Brief Explaination About The Graphs</h1><br>
+            <p>The first chart shows student distribution by ethnicity, where the majority are Melayu, followed by Cina, India, and a smaller portion categorized as Others. This reflects a diverse but Malay-dominant student population.</p><br>
+
+             <p>The second chart highlights students’ state of origin, with representation from all Malaysian states and a small group from international backgrounds. Kelantan, Terengganu, and Selangor appear to contribute significantly to the student body.</p><br>
+             
+             <p>The third chart displays graduation outcomes for the recent year, showing that most students successfully graduated, while a smaller portion did not. This suggests a generally positive academic performance trend.</p>
+        </div>
+    </div>
+</section>
+</main>
+
+
+<script>
+    const donutCtx = document.getElementById('donutChart').getContext('2d');
+    new Chart(donutCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Melayu', 'Cina', 'India', 'Lain-lain'],
+            datasets: [{
+                data: [500, 300, 150, 50],
+                backgroundColor: ['#070964', '#1cc88a', '#36b9cc', '#f6c23e']
+            }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    });
+
+    const pieCtx = document.getElementById('pieChart').getContext('2d');
+    new Chart(pieCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Kelantan','Terengganu','Kuala Lumpur','Negeri Sembilan','Perlis','Perak','P.Pinang','Kedah','Sabah','Sarawak','Pahang','Selangor','Johor','Wilayah Persekutuan','Antarabangsa'],
+            datasets: [{
+                data: [167, 89, 150, 93, 30, 120, 110, 75, 60, 55, 80, 220, 180, 90, 100],
+                backgroundColor: [
+                    '#4e73df','#1cc88a','#36b9cc','#f6c23e','#e74a3b',
+                    '#858796','#fd7e14','#6f42c1','#20c997','#6610f2',
+                    '#d63384','#0dcaf0','#070964','#198754','#dc3545'
+                ]
+            }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    });
+
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Tahun 1', 'Tahun 2', 'Tahun 3', 'Tahun 4'],
+            datasets: [{
+                data: [420, 350, 300, 410],
+                backgroundColor: '#070964'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+
+    const enrollmentCtx = document.getElementById('enrollmentChart').getContext('2d');
+    new Chart(enrollmentCtx, {
+        type: 'line',
+        data: {
+            labels: ['2021','2022','2023','2024','2025'],
+            datasets: [{
+                label: 'Number of Students',
+                data: [2200, 3100, 3900, 3200, 4600],
+                borderColor: '#4e73df',
+                backgroundColor: '#070964',
+                pointRadius: 6,
+                fill: false,
+                tension: 0.3
+            }]
+        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+    });
+
+    const facultyTrendCtx = document.getElementById('facultyTrendChart').getContext('2d');
+    new Chart(facultyTrendCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Engineering','Business','Medicine','Dentistry','IT','Education'],
+            datasets: [{
+                data: [850, 920, 600, 450, 780, 500],
+                backgroundColor: ['#1cc88a','#36b9cc','#f6c23e','#e74a3b','#4e73df','#858796']
+            }]
+        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } }
+    });
+
+    const graduationCtx = document.getElementById('graduationChart').getContext('2d');
+    new Chart(graduationCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Graduated','Not Graduated'],
+            datasets: [{
+                data: [88, 12],
+                backgroundColor: ['#070964','#e74a3b']
+            }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    });
+</script>
+
+<footer class="footer">
+    <p>© 2025 SH University. All rights reserved.</p>
+    <p>Follow us on <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+</footer>
+
+<script>
+    let user = sessionStorage.getItem("currentUser");
+    if (!user) {
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("username").innerText = user;
+    }
+
+    function logout() {
+        sessionStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>

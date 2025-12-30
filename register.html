@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #5f78af;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+   
+        .login-container {
+            width: 360px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        
+        .login-header {
+            background: #12245e;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .login-header img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        .login-header h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+       
+        .box {
+            padding: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1c84f3;
+        }
+
+        .msg {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+
+   
+    <div class="login-header">
+        <img src="css/logo.png" alt="SH University Logo">
+        <h2>Welcome to SH University<br>System Register</h2>
+    </div>
+
+   
+    <div class="box">
+        <input type="text" id="regName" placeholder="Username">
+        <input type="password" id="regPass" placeholder="Password">
+
+        <button onclick="register()">Register</button>
+
+        <div class="msg" id="message"></div>
+
+        <a href="login.html">Already have account? Login</a>
+    </div>
+
+</div>
+
+<script>
+function register() {
+    let name = document.getElementById("regName").value;
+    let pass = document.getElementById("regPass").value;
+    let msg = document.getElementById("message");
+
+    if (name === "" || pass === "") {
+        msg.style.color = "red";
+        msg.innerText = "Please fill all fields";
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+    let exist = users.find(u => u.name === name);
+
+    if (exist) {
+        msg.style.color = "red";
+        msg.innerText = "Username already registered!";
+        return;
+    }
+
+   
+    users.push({ name: name, pass: pass });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    msg.style.color = "green";
+    msg.innerText = "Register successful!";
+}
+</script>
+
+</body>
+</html>

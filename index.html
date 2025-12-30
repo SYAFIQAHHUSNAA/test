@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-left">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="school.html">About Us</a></li>
+            <li><a href="student.html">Students Info</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-right">
+        <div class="profile">
+            Welcome, <span id="username"></span>
+            <button onclick="logout()" style="margin-left:10px; padding:5px 10px; cursor:pointer;">
+                Logout
+            </button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search for...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<div class="dashboard-header">
+    <h1>SH University</h1>
+</div>
+
+<main class="container">
+    <div class="cards">
+        <div class="card blue">
+            <p class="card-title">Faculty Offers</p>
+            <h2>15</h2>
+        </div>
+        <div class="card green">
+            <p class="card-title">Courses Available</p>
+            <h2>80++</h2>
+        </div>
+        <div class="card cyan">
+            <p class="card-title">Students Enroll</p>
+            <h2>30,568</h2>
+        </div>
+        <div class="card yellow">
+            <p class="card-title">University Staff</p>
+            <h2>2370</h2>
+        </div>
+    </div>
+</main>
+
+<div class="dashboard-header">
+    <div class="promo-banner">
+        <img src="css/building.png" alt="Dewan Agong Tuanku Canselor">
+    </div>
+</div>
+
+<main class="container">
+    <div class="chart-container">
+        <div class="chart-card2">
+            <a href="school.html" class="card-link">
+                <div class="card2">
+                    <img src="css/logo.png" class="card2-image">
+                    <div class="card-content">
+                        <p><b>About SH University</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="chart-card2">
+            <a href="student.html" class="card-link">
+                <div class="card2">
+                    <img src="css/student.jpg" class="card2-image">
+                    <div class="card-content">
+                        <p><b>Students Information</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="chart-card2">
+            <a href="contact.html" class="card-link">
+                <div class="card2">
+                    <img src="css/courses.jpg" class="card2-image">
+                    <div class="card-content">
+                        <p><b>Contact Us</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="chart-card2">
+            <a href="#" class="card-link">
+                <div class="card2">
+                    <img src="css/activity.jpg" class="card2-image">
+                    <div class="card-content">
+                        <p><b>SH University Activity</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="chart-card2">
+            <a href="#" class="card-link">
+                <div class="card2">
+                    <img src="css/annoucement.png" class="card2-image">
+                    <div class="card-content">
+                        <p><b>SH University Announcement</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="chart-card2">
+            <a href="#" class="card-link">
+                <div class="card2">
+                    <img src="css/media.jpg" class="card2-image">
+                    <div class="card-content">
+                        <p><b>SH University Media</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
+
+
+<footer class="footer">
+    <p>© 2025 SH University. All rights reserved.</p>
+    <p>Follow us on 
+        <a href="#">Facebook</a> | 
+        <a href="#">Instagram</a> | 
+        <a href="#">Twitter</a>
+    </p>
+</footer>
+
+
+<script>
+    
+    let user = sessionStorage.getItem("currentUser");
+
+    if (!user) {
+       
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("username").innerText = user;
+    }
+</script>
+
+<script>
+    
+    function logout() {
+        sessionStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>

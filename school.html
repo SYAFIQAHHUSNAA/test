@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Info</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-left">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="school.html">About Us</a></li>
+            <li><a href="student.html">Students Info</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+     <div class="nav-right">
+        <div class="profile">
+            Welcome, <span id="username"></span>
+            <button onclick="logout()" style="margin-left:10px; padding:5px 10px; cursor:pointer;">
+                Logout
+            </button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search for...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+<div class="dashboard-header">
+        <h1>University Information</h1>
+    </div>
+
+
+<main class="container">
+   <div class="cards">
+    <a href="#history-info" class="card-link">
+        <div class="card blue">
+            <h2>History Of SH University (Brief Information)</h2>
+        </div>
+    </a>
+
+    <a href="#vision" class="card-link">
+        <div class="card green">
+            <h2>Vission, Mission, Value & Objective</h2>
+        </div>
+</a>
+
+    <a href="#message" class="card-link">
+        <div class="card cyan">
+            <h2>Message From University President</h2>
+        </div>
+</a>
+
+        <a href="#faculty" class="card-link">
+        <div class="card yellow">
+            <h2>Faculty (List of Faculties Available For Students)</h2>
+        </div>
+</a>
+</main>
+
+<main class="container">
+<section id="history-info">
+    <div class="box-hover1">
+     
+        <div class="image-container">
+            <img src="css/building.png">
+        </div>
+        
+        <div class="text-content">
+            <h1>History of SH University</h1><br>
+            <p>SH University was established in 1995 in Kuala Lumpur, Malaysia with the aim of providing high-quality education to students from all over the country and abroad. Originally a small institution with just a few faculties, it has grown over the decades into a leading university known for academic excellence, research, and community engagement.</p><br>
+
+            <p>The university offers a wide range of programs across multiple faculties, including Engineering, Business, Science, Arts, and Law. Throughout its history, SH University has focused on fostering innovation, critical thinking, and leadership skills among its students.</p><br>
+
+            <p>Over the years, SH University has built strong partnerships with international institutions, enabling student exchange programs, collaborative research, and global exposure. Its commitment to holistic education ensures that graduates are well-prepared for professional careers and societal contributions.</p><br>
+
+             <p>Today, SH University continues to uphold its tradition of excellence, integrity, and inclusivity, striving to create a vibrant learning environment for students, faculty, and the wider community.</p>
+        </div>
+    </div>
+</section>
+</main>
+
+<section id="vision">
+    <div class="box-hover1">
+     
+        <div class="image-container">
+            <img src="css/vision.jpg">
+        </div>
+        
+        <div class="text-content">
+            <h1>Vision, Mission, Value & Objective</h1><br>
+            <p>Vision: To be a leading institution in education and research, nurturing innovative and responsible global citizens.</p><br>
+
+            <p>Mission: To provide high-quality education, foster critical thinking, and support lifelong learning for all students.</p><br>
+
+             <p>Values: Integrity, Excellence, Innovation, Inclusivity, and Collaboration guide everything we do.</p><br>
+
+            <p>Objective: To enhance academic excellence, promote research and innovation, develop skilled graduates, and contribute positively to society.</p>
+        </div>
+    </div>
+</section>
+
+<main class="container">
+<section id="message">
+    <div class="box-hover1">
+     
+        <div class="image-container">
+            <img src="css/passport22.png">
+        </div>
+        
+        <div class="text-content">
+            <h1>Message From University President</h1><br>
+            <br><br><br>
+            <p>"On behalf of SH University, I would like to extend my heartfelt appreciation to our students, staff, and partners who continually strive for excellence. Your dedication, passion, and hard work have been the cornerstone of our achievements and the growth of this institution. I am proud of our university community for embracing innovation, nurturing knowledge, and contributing positively to society. Together, we will continue to reach greater heights and uphold the values that make SH University a beacon of learning and inspiration."</p>
+        </div>
+    </div>
+</section>
+</main>
+
+<main class="container">
+<section id="chart">
+    <div class="chart-row">
+        <div class="chart-card">
+            <p class="card-title">SH University Students Enrollment (Alltime)</p>
+             <p class="card-title">(5 Best Faculty)</p>
+            <canvas id="barChart"></canvas>
+        </div>
+
+    
+        <div class="chart-card">
+            <p class="card-title">Site Visit Percentage(2021-2025)</p>
+            <canvas id="pointChart"></canvas>
+        </div>
+    </div>
+</section>
+</main>
+
+
+
+        <main class="container"> <!--utk gmbr-->
+            
+<div class="dashboard-header">
+        <h1>Faculty Offers</h1>
+        <p>15 Differents Fcaulty Available</p>
+    </div>
+
+    <section class="faculty">
+    <div class="chart-container">
+        <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB1.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Destistry</b></p>
+                    </div>
+                </div>
+        </div>
+
+         <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB2.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Medicine</b></p>
+                    </div>
+                </div>
+        </div>
+
+         <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB3.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Pharmacy</b></p>
+                    </div>
+                </div>
+        </div>
+
+         <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB4.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Engineering</b></p>
+                    </div>
+                </div>
+        </div>
+
+         <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB5.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Science</b></p>
+                    </div>
+                </div>
+        </div>
+
+         <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB6.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Law</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB7.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Education</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB8.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Sport Science</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB9.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Hospitality adn Tourism Management</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB10.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Computer Science and Information Technology</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB11.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Arts and Social Sciences</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB12.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Architecture and Built Environment</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB13.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Communication and Media Studies</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB14.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Environmental Studies</b></p>
+                    </div>
+                </div>
+        </div>
+
+          <div class="chart-card2">
+                <div class="card2">
+                    <img src="css/AB15.jpg">
+                    <div class="card-content">
+                        <p><b>Faculty of Computer Science and Information Technology</b></p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+</main>
+
+
+
+<footer class="footer">
+    <p>© 2025 SH University. All rights reserved.</p>
+    <p>Follow us on <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    const barChart = new Chart(barCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Engineering', 'Business', 'Medical', 'Management', 'Art'],
+            datasets: [{
+                label: 'Number of Students',
+                data: [5780, 3050, 7700, 2280, 1800],
+                backgroundColor: ['#4e73df','#1cc88a','#36b9cc','#f6c23e','#e74a3b'],
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+  
+    const pointCtx = document.getElementById('pointChart').getContext('2d');
+    const pointChart = new Chart(pointCtx, {
+        type: 'line',
+        data: {
+            labels: ['2020', '2021', '2022', '2023', '2024'],
+            datasets: [{
+                label: 'Graduation Rate (%)',
+                data: [65, 88, 75, 93, 95],
+                backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                borderColor: '#4e73df',
+                fill: true,
+                tension: 0.4,
+                pointStyle: 'circle',
+                pointRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, max: 100 } }
+        }
+    });
+</script>
+<script>
+    
+    let user = sessionStorage.getItem("currentUser");
+
+    if (!user) {
+       
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("username").innerText = user;
+    }
+</script>
+
+<script>
+    
+    function logout() {
+        sessionStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+    }
+</script>
+
+</script>
+</body>
+</html>
